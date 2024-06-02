@@ -6,7 +6,7 @@ import { IoMdAnalytics } from 'react-icons/io';
 import { RiTeamLine } from 'react-icons/ri';
 import { FaCode } from 'react-icons/fa';
 
-const AdminLayouts = ({ children }) => {
+const AgentsLayouts = ({ children }) => {
     //useState
     const [open, setOpen] = useState(true);
     //compotement
@@ -14,14 +14,15 @@ const AdminLayouts = ({ children }) => {
         setOpen(!open);
     }
     const Menu = [
-        { title: "Dashboard", icon:<IoMdAnalytics /> ,link:"/admin" },
-        { title: "Liste des agents", icon: <RiTeamLine /> ,link:"/agentes"},
-        { title: "Scripts", icon: <FaCode /> ,link:"/Scripts"},
+        { title: "La poste", icon:<IoMdAnalytics /> ,link:"/post" },
+        { title: "ADR", icon: <RiTeamLine /> ,link:"/adr"},
+        { title: "Arulos", icon: <FaCode /> ,link:"/arulos"},
+        { title: "Commercial", icon: <FaCode /> ,link:"/commerce"},
     ]
     return (
-        <main className='flex h-screen  overflow-hidden'>
-            <Sidebar state={open} Menus={Menu} titre="Chef centre" />
-            <div className="text-white h[100%] w-[100%]">
+        <main className='flex h-screen'>
+            <Sidebar state={open} Menus={Menu} titre="Agents" />
+            <div className="text-white h[100%] w-screen overflow-hidden">
                 <Nav />
                 {children}
             </div>
@@ -29,4 +30,4 @@ const AdminLayouts = ({ children }) => {
     )
 }
 
-export default AdminLayouts
+export default AgentsLayouts  
